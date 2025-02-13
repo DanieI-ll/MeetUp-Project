@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <link rel="stylesheet" href="dist/events.css" />
+    <link rel="stylesheet" href="dist/media.css" />
+    <title>Events</title>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <navbar>
+      <div class="search_block">
+        <!-- Logo section -->
+        <div class="nav_logo">
+          <a href="index.html"><img src="img/logo.svg" alt="logo" /></a>
+        </div>
+        <!-- Search bar section -->
+        <div class="search-bar">
+          <div class="search-input">
+            <img src="img/search.svg" alt="search" />
+            <input class="search" type="text" placeholder="Search events" />
+          </div>
+          <input type="text" class="location" placeholder="Mountain View, CA" />
+          <button class="search-button">
+            <img src="img/second_search.svg" alt="search" />
+          </button>
+        </div>
+      </div>
+
+      <div class="login-block">
+        <!-- Language selection -->
+        <div class="language-logo"><img src="img/language.svg" alt="language" /></div>
+        <div class="login-container">
+          <a href="#" class="language">English</a>
+          <!-- Log in button -->
+          <a href="#" type="submit" class="log-in">Log in</a>
+          <!-- Sign up button -->
+          <a href="#" type="submit" class="sign-up">Sign up</a>
+        </div>
+      </div>
+    </navbar>
+
+    <main>
+      <section class="choose-event-container">
+        <div class="choose-event-header">
+          <div>
+            <h1>Events near New York, NY</h1>
+            <p class="c-event-text">Events</p>
+          </div>
+
+          <div class="map-container">
+            <p class="map-text">Find events near</p>
+            <h2 class="map-header">New York, NY</h2>
+            <div class="map">
+              <button id="browseMapBtn">Browse in map <img src="img/button-arrows.svg" alt="button-arrows" /></button>
+              <button id="closeMapBtn"><img src="img/cross-btn.svg" alt="cross-btn" /></button>
+              <iframe id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387196.0766254553!2d-74.30914775526946!3d40.69667270128369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sde!4v1739214927627!5m2!1sen!2sde" width="350" height="285" style="border: 0; border-radius: 12px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-container">
+          <div class="select-wrapper">
+            <select id="typeFilter">
+              <option value="any type">Any Type</option>
+              <option value="online">Online</option>
+              <option value="offline">Offline</option>
+            </select>
+            <span class="select-arrow">
+              <img src="img/arrow-down.svg" alt="arrow-down" />
+            </span>
+          </div>
+
+          <div class="select-wrapper">
+            <select id="distanceFilter">
+              <option value="Any distance">Any Distance</option>
+              <option value="10">10 km</option>
+              <option value="15">15 km</option>
+              <option value="25">25 km</option>
+              <option value="50">50 km</option>
+              <option value="75">75 km</option>
+              <option value="100">100 km</option>
+            </select>
+            <span class="select-arrow">
+              <img src="img/arrow-down.svg" alt="arrow-down" />
+            </span>
+          </div>
+
+          <div class="select-wrapper">
+            <select id="categoryFilter">
+              <option value="Any category">Any Category</option>
+              <option value="Business">Business</option>
+              <option value="Technology">Technology</option>
+              <option value="Health and Wellbeing">Health and Wellbeing</option>
+              <option value="Social Activities">Social Activities</option>
+              <option value="Hobbies and Passions">Hobbies and Passions</option>
+            </select>
+            <span class="select-arrow">
+              <img src="img/arrow-down.svg" alt="arrow-down" />
+            </span>
+          </div>
+
+          <div class="select-wrapper">
+            <select id="dayFilter">
+              <option value="Any day">Any Day</option>
+              <option value="Wed, Mar 13">Wed, Mar 13</option>
+              <option value="Thu, Mar 14">Thu, Mar 14</option>
+              <option value="Mon, Mar 16">Mon, Mar 16</option>
+              <option value="Tue, Mar 23">Tue, Mar 23</option>
+            </select>
+            <span class="select-arrow">
+              <img src="img/arrow-down.svg" alt="arrow-down" />
+            </span>
+          </div>
+        </div>
+
+        <div class="events-list" id="eventsList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-header">
+          <h2>Create your own Meetup group.</h2>
+          <a href="#">Get Started</a>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-links-box">
+            <h3>Your Account</h3>
+            <ul>
+              <li><a href="#">Sign up</a></li>
+              <li><a href="#">Log in</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Become an Affiliate</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-box">
+            <h3>Discover</h3>
+            <ul>
+              <li><a href="#">Groups</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Topics</a></li>
+              <li><a href="#">Cities</a></li>
+              <li><a href="#">Online Events</a></li>
+              <li><a href="#">Local Guides</a></li>
+              <li><a href="#">Make Friends</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-box">
+            <h3>Meetup</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Meetup Pro</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Apps</a></li>
+              <li><a href="#">Podcast</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-follow-us">
+          <h3>Follow us</h3>
+          <div class="footer-follow-us-content">
+            <div class="footer-social">
+              <a href="#"><img src="img/facebook.svg" alt="facebook" /></a>
+              <a href="#"><img src="img/x.svg" alt="x" /></a>
+              <a href="#"><img src="img/youtube.svg" alt="youtube" /></a>
+              <a href="#"><img src="img/instagram.svg" alt="instagram" /></a>
+              <a href="#"><img src="img/tiktok.svg" alt="tiktok" /></a>
+            </div>
+            <div class="footer-download">
+              <a href="#"><img src="img/googleplay.png" alt="googleplay" /></a>
+              <a href="#"><img src="img/appstore.png" alt="appstore" /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-license">
+          <ul>
+            <li>© 2024 Meetup</li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Do Not Sell or Share My Personal Data</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Main JavaScript file -->
+    <script src="main.js"></script>
+    <script src="events.js"></script>
+  </body>
+</html>
