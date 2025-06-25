@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="dist/style.css" />
     <link rel="stylesheet" href="dist/media.css" />
     <title>Meetup</title>
   </head>
@@ -37,9 +37,31 @@
         <div class="login-container">
           <a href="#" class="language">English</a>
           <!-- Log in button -->
-          <a href="#" type="submit" class="log-in">Log in</a>
+          <a href="#" type="submit" class="log-in" id="loginBtn">Log in</a>
           <!-- Sign up button -->
-          <a href="#" type="submit" class="sign-up">Sign up</a>
+          <a href="#" type="submit" class="sign-up" id="signupBtn">Sign up</a>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="modal" class="hidden modal">
+        <div class="modal-content">
+          <span id="closeBtn">&times;</span>
+
+          <div id="loginForm" class="form hidden">
+            <h2>Login</h2>
+            <input type="text" placeholder="Email" /><br /><br />
+            <input type="password" placeholder="Password" /><br /><br />
+            <button>Login</button>
+          </div>
+
+          <div id="signupForm" class="form hidden">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Name" /><br /><br />
+            <input type="email" placeholder="Email" /><br /><br />
+            <input type="password" placeholder="Password" /><br /><br />
+            <button>Sign Up</button>
+          </div>
         </div>
       </div>
     </navbar>
@@ -265,7 +287,7 @@
               </div>
             </div>
           </div>
-          <div class="events-content ">
+          <div class="events-content">
             <img src="img/upcoming4.png" alt="upcoming4" />
             <div class="media-event-box">
               <h3>FREE Webinar : Introduction to Power BI</h3>

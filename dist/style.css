@@ -21,6 +21,96 @@ body {
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+.modal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal .modal-content #closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+  border: none;
+  background: transparent;
+  transition: color 0.3s ease;
+}
+.modal .modal-content #closeBtn:hover {
+  color: #ff5c5c;
+}
+.modal .modal-content #loginForm h2,
+.modal .modal-content #signupForm h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #222;
+}
+.modal .modal-content #loginForm input[type=text],
+.modal .modal-content #loginForm input[type=email],
+.modal .modal-content #loginForm input[type=password],
+.modal .modal-content #signupForm input[type=text],
+.modal .modal-content #signupForm input[type=email],
+.modal .modal-content #signupForm input[type=password] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+.modal .modal-content #loginForm input[type=text]:focus,
+.modal .modal-content #loginForm input[type=email]:focus,
+.modal .modal-content #loginForm input[type=password]:focus,
+.modal .modal-content #signupForm input[type=text]:focus,
+.modal .modal-content #signupForm input[type=email]:focus,
+.modal .modal-content #signupForm input[type=password]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.modal .modal-content #loginForm button,
+.modal .modal-content #signupForm button {
+  background: #00798a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.5s;
+}
+.modal .modal-content #loginForm button:hover,
+.modal .modal-content #signupForm button:hover {
+  background: black;
+}
+
 navbar {
   display: flex;
   align-items: center;
@@ -35,10 +125,6 @@ navbar {
 
 .nav_logo {
   margin: 15px 40px 15px 24px;
-}
-.nav_logo img:hover {
-  border-bottom: 1.5px solid #e32359;
-  transition: 1s;
 }
 
 .search-bar {
@@ -92,7 +178,7 @@ navbar {
   transition: 0.5s;
 }
 .search-button:hover {
-  background: #00798a;
+  background: black;
   transition: 0.5s;
 }
 
@@ -118,8 +204,13 @@ navbar {
 .login-container a {
   transition: 0.3s;
 }
-.login-container a:hover {
-  font-size: 16px;
+.login-container a:hover:last-child {
+  background-color: black;
+  transition: 0.5s;
+}
+.login-container a:hover:nth-child(2) {
+  color: #00798a;
+  transition: 0.5s;
 }
 
 .language {
@@ -191,7 +282,8 @@ main {
   transition: 0.3s;
 }
 .header-text a:hover {
-  letter-spacing: 3px;
+  transition: 0.5s;
+  background-color: black;
 }
 
 .header-img {
@@ -244,6 +336,11 @@ main {
   font-size: 16px;
   line-height: 150%;
   color: #00798a;
+  transition: 0.5s;
+}
+.events-header a:hover {
+  transition: 0.5s;
+  color: black;
 }
 
 .events {
@@ -323,6 +420,11 @@ main {
   font-size: 16px;
   line-height: 150%;
   color: #00798a;
+  transition: 0.5s;
+}
+.upcoming-header a:hover {
+  transition: 0.5s;
+  color: black;
 }
 
 .meetup-container {
@@ -374,6 +476,11 @@ main {
   width: 192px;
   text-decoration: none;
   text-align: center;
+  transition: 0.5s;
+}
+.join-meetup-text a:hover {
+  transition: 0.5s;
+  background-color: black;
 }
 
 .join-meetup-image {
@@ -403,6 +510,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.3s;
+}
+.categories-content:hover {
+  transition: 0.3s;
+  background-color: #25cbe0;
 }
 .categories-content img {
   margin: 22px auto 6px;
@@ -476,6 +588,12 @@ main {
 
 .meetup-works-img {
   margin: 32px 24px 24px 24px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.meetup-works-img:hover {
+  transition: 0.3s;
+  transform: scale(1.2) rotate(1.2deg);
 }
 
 .meetup-works-content {
@@ -504,6 +622,11 @@ main {
   line-height: 150%;
   color: #00798a;
   text-decoration: none;
+  transition: 0.5s;
+}
+.meetup-works-content a:hover {
+  transition: 0.5s;
+  color: black;
 }
 
 .meetup-friendship-header {
@@ -553,6 +676,11 @@ main {
   line-height: 150%;
   color: #00798a;
   text-decoration: none;
+  transition: 0.5s;
+}
+.meetup-friendship-content a:hover {
+  transition: 0.5s;
+  color: black;
 }
 
 footer {
@@ -591,6 +719,12 @@ footer {
   color: #fff;
   text-decoration: none;
   padding: 10px 14px;
+  transition: 0.5s;
+}
+.footer-header a:hover {
+  transition: 0.5s;
+  border: 2px solid #00798a;
+  background-color: #00798a;
 }
 
 .footer-links {
@@ -621,6 +755,11 @@ footer {
   font-size: 14px;
   line-height: 143%;
   color: #c5c4c4;
+  transition: 0.5s;
+}
+.footer-links-box ul li a:hover {
+  transition: 0.5s;
+  color: white;
 }
 
 .footer-follow-us {
@@ -645,10 +784,24 @@ footer {
   display: flex;
   gap: 32px;
 }
+.footer-social a {
+  transition: 0.5s;
+}
+.footer-social a:hover {
+  transform: scale(1.2) rotate(0deg);
+  transition: 0.5s;
+}
 
 .footer-download {
   display: flex;
   gap: 24px;
+}
+.footer-download a {
+  transition: 0.5s;
+}
+.footer-download a:hover {
+  transform: scale(1.1) rotate(0deg);
+  transition: 0.5s;
 }
 
 .footer-license {
@@ -673,6 +826,11 @@ footer {
   font-size: 14px;
   line-height: 143%;
   color: #c5c4c4;
+  transition: 0.5s;
+}
+.footer-license ul li a:hover {
+  transition: 0.5s;
+  color: white;
 }
 
 .choose-event-container {
@@ -791,6 +949,7 @@ footer {
   width: 15px;
 }
 .map #browseMapBtn:hover {
+  transition: 0.3s;
   border: 3px solid #00798a;
   box-shadow: 0 0 30px;
 }
