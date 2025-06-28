@@ -8,7 +8,7 @@
 - It shows a list of upcoming events and gives users the ability to participate. The interface is clean, user-friendly, and easy to navigate even for first-time visitors.
 
 ## 🔗 Live Demo
-- https://daniei-ll.github.io/Project_meetup/
+- [https://daniei-ll.github.io/Project_meetup/](https://daniei-ll.github.io/MeetUp-Project/)
 
 ## ⚙️ Technologies Used
 
@@ -39,7 +39,7 @@
 - Sie zeigt eine Liste bevorstehender Events an und gibt den Nutzern die Möglichkeit, daran teilzunehmen. Die Benutzeroberfläche ist sauber, benutzerfreundlich und auch für Erstbesucher leicht zu bedienen.
 🔗 Live-Demo
 
-https://daniei-ll.github.io/Project_meetup/
+[https://daniei-ll.github.io/Project_meetup/](https://daniei-ll.github.io/MeetUp-Project/)
 
 ## ⚙️ Verwendete Technologien
 
